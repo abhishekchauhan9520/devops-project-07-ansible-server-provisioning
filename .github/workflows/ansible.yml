@@ -1,0 +1,26 @@
+name: Ansible Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install validation dependencies
+        run: python -m pip install ansible-core pyyaml pytest
+
+      - name: Check Ansible syntax
+        run: ansible-playbook --syntax-check -i inventory/local.ini playbook.yml
+
+      - name: Run repository tests
+        run: python -m pytest -q tests/test_structure.py
