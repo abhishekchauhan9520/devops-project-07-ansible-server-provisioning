@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ansible Provisioned Server</title>
+</head>
+<body>
+  <main>
+    <h1>Ansible Provisioned Server</h1>
+    <p>This host was configured with Ansible.</p>
+    <p>Managed host: {{ ansible_hostname | default('unknown') }}</p>
+  </main>
+</body>
+</html>
