@@ -1,0 +1,5 @@
+[webservers]
+web01 ansible_host=192.0.2.10 ansible_user=ubuntu
+
+# For a real host, supply SSH credentials using your preferred SSH agent,
+# key file, or Ansible Vault. Do not commit private keys or passwords.
